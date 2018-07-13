@@ -1,0 +1,17 @@
+{
+  "name": "express-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bernardo Rubin",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.3"
+  },
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.1"
+  }
+}
