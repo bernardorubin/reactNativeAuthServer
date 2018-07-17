@@ -4,6 +4,7 @@ const mongoose = require('./db/mongoose');
 const userRoutes = require('./routes/user-routes');
 // parses json requests and places it in a body object
 const bodyParser = require('body-parser');
+const privateRoutes = require('./routes/private');
 
 app.use(bodyParser.json());
 
@@ -16,11 +17,8 @@ app.use(bodyParser.json());
 // let compare = bcrypt.compareSync(password, hashedPassword);
 // console.log(`If true the password compared to hashed result are equal -> ${compare}`);
 
-app.get('/', (req, res) => {
-  res.send('welcome');
-})
-
 app.use('/user', userRoutes);
+app.use('/private', privateRoutes)
 
 const PORT = 3000;
 
