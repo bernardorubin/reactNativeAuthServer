@@ -2,7 +2,7 @@ const jwt =  require('jsonwebtoken');
 const User = require('../db/models/user-model');
 
 module.exports = (req, res, next) => {
-  const { token } = req.body;
+  let token = req.header('x-auth');
   try {
     let payload = jwt.verify(token, 'secret');
     User.findById(payload._id)
