@@ -11,7 +11,7 @@ router.post('/register', (req, res) => {
   let newUser = new User({
     email,
     password,
-    username,
+    username: username.toLowerCase(),
   });
 
   newUser
@@ -34,7 +34,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
-  User.findOne({username}).then((user)=> {
+  User.findOne({ username: username.toLowerCase()}).then((user)=> {
     if (!user) {
       return res.status(404).send();
     }
